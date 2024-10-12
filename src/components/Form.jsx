@@ -26,83 +26,79 @@ const Form = () => {
     });
   };
 
- 
-
   // responsible for validation
-   const handleValidation = () => {
-     let errors = {};
-     let valid = true;
+  const handleValidation = () => {
+    let errors = {};
+    let valid = true;
 
-     // First Name validation
-     if (!formData.firstName) {
-       errors.firstName = 'First name is required';
-       valid = false;
-     }
+    // First Name validation
+    if (!formData.firstName) {
+      errors.firstName = 'First name is required';
+      valid = false;
+    }
 
-     // Last Name validation
-     if (!formData.lastName) {
-       errors.lastName = 'Last name is required';
-       valid = false;
-     }
+    // Last Name validation
+    if (!formData.lastName) {
+      errors.lastName = 'Last name is required';
+      valid = false;
+    }
 
-     // Email validation
-     if (!formData.email) {
-       errors.email = 'Email is required';
-       valid = false;
-     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-       errors.email = 'Email is invalid';
-       valid = false;
-     }
+    // Email validation
+    if (!formData.email) {
+      errors.email = 'Email is required';
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = 'Email is invalid';
+      valid = false;
+    }
 
-     // Age validation
-     if (!formData.age) {
-       errors.age = 'Age is required';
-       valid = false;
-     } else if (isNaN(formData.age)) {
-       errors.age = 'Age must be a number ';
-       valid = false;
-     }
+    // Age validation
+    if (!formData.age) {
+      errors.age = 'Age is required';
+      valid = false;
+    } else if (isNaN(formData.age)) {
+      errors.age = 'Age must be a number ';
+      valid = false;
+    }
 
-     // Gender validation
-     if (!formData.gender) {
-       errors.gender = 'Gender is required';
-       valid = false;
-     }
+    // Gender validation
+    if (!formData.gender) {
+      errors.gender = 'Gender is required';
+      valid = false;
+    }
 
-     // Nationality validation
-     if (!formData.nationality) {
-       errors.nationality = 'Nationality is required';
-       valid = false;
-     }
+    // Nationality validation
+    if (!formData.nationality) {
+      errors.nationality = 'Nationality is required';
+      valid = false;
+    }
 
-     // Phone Number validation
-     if (!formData.phoneNumber) {
-       errors.phoneNumber = 'Phone number is required';
-       valid = false;
-     } 
-     // Password validation
-     if (!formData.password) {
-       errors.password = 'Password is required';
-       valid = false;
-     } else if (formData.password.length < 6) {
-       errors.password = 'Password must be at least 6 characters';
-       valid = false;
-     }
+    // Phone Number validation
+    if (!formData.phoneNumber) {
+      errors.phoneNumber = 'Phone number is required';
+      valid = false;
+    }
+    // Password validation
+    if (!formData.password) {
+      errors.password = 'Password is required';
+      valid = false;
+    } else if (formData.password.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+      valid = false;
+    }
 
-     // Confirm Password validation
-     if (!formData.confirmPassword) {
-       errors.confirmPassword = 'Confirm password is required';
-       valid = false;
-     } else if (formData.password !== formData.confirmPassword) {
-       errors.confirmPassword = 'Passwords do not match';
-       valid = false;
-     }
+    // Confirm Password validation
+    if (!formData.confirmPassword) {
+      errors.confirmPassword = 'Confirm password is required';
+      valid = false;
+    } else if (formData.password !== formData.confirmPassword) {
+      errors.confirmPassword = 'Passwords do not match';
+      valid = false;
+    }
 
-     setErrors(errors);
-     return valid;
-   };
-
- 
+    setErrors(errors);
+    return valid;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -119,7 +115,6 @@ const Form = () => {
         (error) => {
           console.log('FAILED...', error.text);
           console.log('FAILED...', error);
-
         }
       );
   };
@@ -128,7 +123,7 @@ const Form = () => {
     <div className='flex items-center justify-center min-h-screen bg-gray-100'>
       <div className='w-full max-w-lg p-8 bg-white shadow-md rounded-md'>
         <h2 className='text-2xl font-semibold text-center text-gray-700'>
-          Contact Us
+          Sign Up
         </h2>
         <form onSubmit={handleSubmit} ref={form} className='mt-6'>
           <div className='mb-4'>
