@@ -1,0 +1,7 @@
+body, html{
+    font-family: "Ubuntu", sans-serif;
+    max-width:1300px;
+    min-width: 300px;
+    margin: auto;
+    background-color: skyblue;
+}
